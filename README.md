@@ -28,13 +28,13 @@ Generate a token at <https://github.com/settings/tokens>.
 
 ### Recommended scopes
 
-| Scope | Why |
-|---|---|
-| `repo` | Full repository access (read + write) |
-| `read:user` | Read your GitHub profile |
-| `read:org` | Read organization membership |
-| `read:packages` | Read GitHub Packages |
-| `gist` | Read/write gists |
+| Scope           | Why                                   |
+| --------------- | ------------------------------------- |
+| `repo`          | Full repository access (read + write) |
+| `read:user`     | Read your GitHub profile              |
+| `read:org`      | Read organization membership          |
+| `read:packages` | Read GitHub Packages                  |
+| `gist`          | Read/write gists                      |
 
 A classic PAT with `repo` + `read:user` covers most use cases. For
 fine-grained PATs, grant **Contents**, **Issues**, **Pull requests**,
@@ -44,10 +44,10 @@ fine-grained PATs, grant **Contents**, **Issues**, **Pull requests**,
 
 Once installed, you can ask Claude things like:
 
-> *"List open pull requests in kyletaylored/github-mcp-server-mcpb."*
-> *"Create an issue titled 'Bug: auth fails' in my-org/my-repo."*
-> *"Show me the README for the anthropics/claude-code repository."*
-> *"Search GitHub for MCP server examples written in TypeScript."*
+> - "List open pull requests in my-org/my-repo."
+> - "Create an issue titled 'Bug: auth fails' in my-org/my-repo."
+> - "Show me the README for the anthropics/claude-code repository."
+> - "Search GitHub for MCP server examples written in TypeScript."
 
 The full set of available tools is determined by the GitHub Copilot MCP
 server — Claude will advertise them after installation.
@@ -78,11 +78,11 @@ If you prefer to wire this up by hand instead of using the `.mcpb`:
 Drop that (with your real token) into your Claude Desktop config and
 restart the app:
 
-| OS | Config path |
-|---|---|
-| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
-| Linux | `~/.config/Claude/claude_desktop_config.json` |
-| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+| OS      | Config path                                                       |
+| ------- | ----------------------------------------------------------------- |
+| macOS   | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Linux   | `~/.config/Claude/claude_desktop_config.json`                     |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json`                     |
 
 ## Architecture note
 
