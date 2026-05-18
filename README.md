@@ -22,6 +22,15 @@ page and double-click it. Claude Desktop's Extensions UI will ask for:
 Requires `node` / `npx` on your `PATH` — installed with
 [Node.js](https://nodejs.org/) or `brew install node` on macOS.
 
+> **Enterprise / managed devices**: Your org admin may block installation of
+> unsigned `.mcpb` files. If double-clicking the bundle is blocked, install
+> it as an unpacked extension instead:
+>
+> 1. Clone this repo: `git clone https://github.com/kyletaylored/github-mcp-server-mcpb`
+> 2. In Claude Desktop go to **Settings → Extensions → Install unpacked**
+>    and select the cloned folder.
+> 3. Enter your GitHub PAT when prompted.
+
 ## GitHub Personal Access Token
 
 Generate a token at <https://github.com/settings/tokens>.
