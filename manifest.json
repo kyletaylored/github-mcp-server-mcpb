@@ -1,0 +1,54 @@
+{
+    "manifest_version": "0.2",
+    "name": "github-mcp",
+    "display_name": "GitHub MCP Server",
+    "version": "1.0.0",
+    "description": "Connect Claude Desktop to GitHub's MCP API for repositories, issues, pull requests, and code.",
+    "long_description": "Bridges Claude Desktop to the GitHub Copilot MCP endpoint (https://api.githubcopilot.com/mcp) over Streamable HTTP. Provides tools for working with repositories, issues, pull requests, code search, and more. Uses mcp-remote as a stdio-to-HTTP proxy; the only requirement is Node.js (npx) on your PATH and a GitHub Personal Access Token.",
+    "author": {
+        "name": "Kyle Taylor"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/kyletaylored/github-mcp-server-mcpb",
+    "documentation": "https://github.com/kyletaylored/github-mcp-server-mcpb#readme",
+    "support": "https://github.com/kyletaylored/github-mcp-server-mcpb/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kyletaylored/github-mcp-server-mcpb"
+    },
+    "keywords": [
+        "github",
+        "mcp",
+        "copilot",
+        "repositories",
+        "issues",
+        "pull-requests",
+        "code-search"
+    ],
+    "user_config": {
+        "github_pat": {
+            "type": "string",
+            "title": "GitHub Personal Access Token",
+            "description": "A GitHub PAT with repo, read:user, and other required scopes. Generate one at https://github.com/settings/tokens.",
+            "required": true,
+            "sensitive": true
+        }
+    },
+    "server": {
+        "type": "node",
+        "entry_point": "README.md",
+        "mcp_config": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-remote@latest",
+                "https://api.githubcopilot.com/mcp",
+                "--header",
+                "Authorization: Bearer ${user_config.github_pat}",
+                "--transport",
+                "http-only"
+            ],
+            "env": {}
+        }
+    }
+}

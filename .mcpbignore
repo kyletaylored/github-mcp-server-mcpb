@@ -1,0 +1,22 @@
+# Dev-only files that shouldn't ship in the extension bundle.
+
+# Source control / CI
+.git/
+.github/
+.gitignore
+
+# Local dev configs
+.vscode/
+.idea/
+.claude/
+
+# Build artifacts
+*.mcpb
+*.dxt
+
+# Project planning (not extension content)
+PRD.md
+_reference/
+
+# OS junk
+.DS_Store
