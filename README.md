@@ -86,23 +86,12 @@ restart the app:
 
 ## Architecture note
 
-The `.mcpb` format packages local MCP servers (Python, Node, binary). The
-GitHub Copilot MCP endpoint is a remote Streamable HTTP server, so this
-bundle uses [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) as a
-thin stdio-to-HTTP bridge. No custom server code is bundled — `mcp-remote`
-is pulled at runtime via `npx`.
-
-## Releasing
-
-The CI workflow builds and attaches a `.mcpb` to any `v*` tag push:
-
-```bash
-git tag v1.0.0
-git push --tags
-```
-
-Bump the `version` field in `manifest.json` to match each new tag before
-pushing.
+`.mcpb` is the Claude Desktop extension format (successor to `.dxt`). It
+packages local MCP servers (Python, Node, binary) as double-click-installable
+bundles. The GitHub Copilot MCP endpoint is a remote Streamable HTTP server,
+so this bundle uses [`mcp-remote`](https://www.npmjs.com/package/mcp-remote)
+as a thin stdio-to-HTTP bridge. No custom server code is bundled —
+`mcp-remote` is pulled at runtime via `npx`.
 
 ## License
 
